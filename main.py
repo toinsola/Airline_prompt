@@ -67,10 +67,31 @@ Salary varchar(25) not null,
 Hired varchar(20) not null);
 """
 
+plane_info = """
+insert into Plane_Inventory values
+( 001, "Boeing 747", 650, 300, "2012" ),
+( 002, "Boeing 777", 660 , 310 , "2014" ),
+( 003, "Boeing 888", 700, 320, "2018" );
+"""
+
+route_info = """
+insert into Routes values
+(001, "Miami, Florida", "0600", "NYC, NY", "1200" ),
+(002, "STL, MO", "1200", "Orlando, FL", "1400" ),
+(003, "Indianapolis, Indiana", "1700", "Dallas, TX", "2000" );
+"""
+
+pilots_info = """
+insert into Pilots values
+( 0001, "Bob Blue", "BS", "3 years", "$80,000", "2019"),
+( 0002, "George Purple", "BA", "6 years", "$100,000", "2016"),
+( 0003, "Kathy Green", "MBA", "2 years", "$75,000", "2020");
+"""
+
 
 
 #Callout section
 connection = create_server_connection("localhost", "root", "student", "United_Air")
-execute_query(connection, create_table3)
+execute_query(connection, pilots_info)
 
 
